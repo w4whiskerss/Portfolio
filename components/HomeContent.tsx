@@ -29,9 +29,11 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
   const [hireFocus, setHireFocus] = useState(false);
   const [showMoreOpen, setShowMoreOpen] = useState(false);
   const [pageViews, setPageViews] = useState<number | null>(null);
+  const [viewsReady, setViewsReady] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
 
     async function loadViewCount() {
       try {
@@ -51,15 +53,22 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
         }
 
         setPageViews(data.totalViews);
+        setViewsReady(true);
       } catch {
         // Keep the UI quiet if storage is not configured.
       }
     }
 
     void loadViewCount();
+    intervalId = setInterval(() => {
+      void loadViewCount();
+    }, 15000);
 
     return () => {
       isMounted = false;
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
     };
   }, []);
 
@@ -286,7 +295,11 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
 
                   {pageViews !== null ? (
                     <span
-                      className={`glass-chip rounded-full border border-white/12 px-4 py-2 transition-all duration-300 ${
+                      className={`glass-chip rounded-full border border-white/12 px-4 py-2 transition-all duration-500 ${
+                        viewsReady
+                          ? "translate-y-0 opacity-100"
+                          : "pointer-events-none translate-y-2 opacity-0"
+                      } ${
                         hireFocus ? "hire-focus-muted" : ""
                       }`}
                     >
