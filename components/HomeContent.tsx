@@ -589,7 +589,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
           </div>
 
           <div className="flex items-stretch">
-            <div className="glass-surface glass-panel-strong animate-pop-up-delay-5 relative flex w-full flex-col justify-between overflow-hidden rounded-[1.9rem] border border-white/10 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:p-7">
+              <div className="glass-surface glass-panel-strong glass-overflow-visible animate-pop-up-delay-5 relative flex w-full flex-col justify-between rounded-[1.9rem] border border-white/10 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:p-7">
               <div className="relative z-10 flex items-start justify-between gap-4">
                 <div>
                   <p
@@ -622,7 +622,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                 </div>
               </div>
 
-              <div className="glass-surface glass-panel-warm relative z-10 mt-8 rounded-[1.6rem] border border-orange-300/20 p-5">
+              <div className="glass-surface glass-panel-warm glass-overflow-visible relative z-20 mt-8 rounded-[1.6rem] border border-orange-300/20 p-5">
                 <p
                   className={`text-xs tracking-[0.3em] uppercase transition-all duration-300 ${
                     hireFocus ? "hire-focus-muted" : "text-orange-100/70"
@@ -665,7 +665,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     <p className="mt-2 text-base font-medium text-white">
                       {liveChannelStats.subscriberCount}
                     </p>
-                    <div className="pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 z-20 w-max -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:translate-y-[-4px] group-hover:opacity-100">
+                    <div className="pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 z-[9999] w-max -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:translate-y-[-4px] group-hover:opacity-100">
                       <div className="glass-surface rounded-[1rem] border border-white/12 px-4 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
                         <a
                           href="https://www.youtube.com/@W4Whiskers1?sub_confirmation=1"
