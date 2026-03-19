@@ -30,10 +30,9 @@
 
 ## 📸 Projects Preview
 
-<p align="center">
-  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Zvc3Q4Mms0bnJrbWNqcTVpcW03bGRteDF3cG1oeTAxYmhwMHp1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hBl5uy8Zb8K7SFWl4T/giphy.gif" width="45%" />
-  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmQxaW43Y3ozMml6Mms5bnc0Yjk2dHN2dHg2MGV5bDlsdDB3Yjk5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ayPaYOEn5NfiADobKq/giphy.gif" width="45%" />
-</p>
+![Project 1](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Zvc3Q4Mms0bnJrbWNqcTVpcW03bGRteDF3cG1oeTAxYmhwMHp1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hBl5uy8Zb8K7SFWl4T/giphy.gif)
+
+![Project 2](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmQxaW43Y3ozMml6Mms5bnc0Yjk2dHN2dHg2MGV5bDlsdDB3Yjk5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ayPaYOEn5NfiADobKq/giphy.gif)
 
 ---
 
