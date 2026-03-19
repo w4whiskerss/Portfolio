@@ -6,14 +6,17 @@ const VIEW_WINDOW_SECONDS = 60 * 60;
 const TOTAL_VIEWS_KEY = "portfolio:views:total";
 
 function getRedisClient() {
-  if (
-    !process.env.UPSTASH_REDIS_REST_URL ||
-    !process.env.UPSTASH_REDIS_REST_TOKEN
-  ) {
+  const url = process.env.UPSTASH_REDIS_REST_URL?.trim();
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN?.trim();
+
+  if (!url || !token) {
     return null;
   }
 
-  return Redis.fromEnv();
+  return new Redis({
+    url,
+    token,
+  });
 }
 
 function getClientIp(request: Request) {
@@ -29,7 +32,7 @@ function getClientIp(request: Request) {
 function getVisitorId(request: Request) {
   const ip = getClientIp(request);
   const userAgent = request.headers.get("user-agent") ?? "unknown";
-  const salt = process.env.VIEWER_SALT ?? "w4whiskers-portfolio";
+  const salt = process.env.VIEWER_SALT?.trim() || "w4whiskers-portfolio";
 
   return createHash("sha256")
     .update(`${ip}:${userAgent}:${salt}`)
