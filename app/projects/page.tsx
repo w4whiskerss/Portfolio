@@ -55,7 +55,7 @@ function renderDescription(project: (typeof projects)[number]) {
           project this is literally just it :D
         </p>
         <p>
-          Am using <strong>Netlify.app</strong> to host this website, This
+          Am using <strong>Vercel</strong> to host this website, This
           website has took <strong>2 weeks</strong> and am still making
           changes <strong>every day</strong> in it
         </p>
@@ -169,12 +169,12 @@ export default function ProjectsPage() {
                     {project.actions === "portfolio" ? (
                       <div className="flex flex-wrap gap-3">
                         <a
-                          href="https://www.netlify.com/"
+                          href="https://w4whiskers-portfolio.vercel.app/"
                           target="_blank"
                           rel="noreferrer"
                           className="project-action-button"
                         >
-                          Hosted on Netlify.app
+                          Hosted on Vercel
                         </a>
                       </div>
                     ) : null}
