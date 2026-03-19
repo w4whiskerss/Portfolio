@@ -1,6 +1,7 @@
 import HomeContent from "@/components/HomeContent";
 
 const channelUrl = "https://www.youtube.com/@W4Whiskers1";
+const channelId = "UCHQ6YLMWEidDw0LqjBTDLmg";
 const socialCountsBaseUrl = "https://api.socialcounts.org/youtube-live-subscriber-count";
 
 type ChannelStats = {
@@ -19,18 +20,6 @@ const fallbackChannelStats: ChannelStats = {
   url: channelUrl,
 };
 
-function decodeYouTubeText(raw: string | undefined) {
-  if (!raw) {
-    return undefined;
-  }
-
-  try {
-    return JSON.parse(`"${raw.replace(/"/g, '\\"')}"`) as string;
-  } catch {
-    return raw;
-  }
-}
-
 function formatCompactCount(value: number | undefined) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return undefined;
@@ -44,37 +33,6 @@ function formatCompactCount(value: number | undefined) {
 
 async function getChannelStats(): Promise<ChannelStats> {
   try {
-    const response = await fetch(`${channelUrl}/about`, {
-      headers: {
-        "user-agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
-      },
-      cache: "no-store",
-    });
-
-    if (!response.ok) {
-      return fallbackChannelStats;
-    }
-
-    const html = await response.text();
-    const name =
-      decodeYouTubeText(
-        html.match(/channelMetadataRenderer\":\{\"title\":\"([^\"]+)\"/)?.[1],
-      ) ?? fallbackChannelStats.name;
-    const channelId =
-      decodeYouTubeText(
-        html.match(/"channelId":"([^"]+)"/)?.[1] ??
-          html.match(/"externalId":"([^"]+)"/)?.[1] ??
-          html.match(/"browseId":"([^"]+)"/)?.[1],
-      ) ?? undefined;
-
-    if (!channelId) {
-      return {
-        ...fallbackChannelStats,
-        name: name.startsWith("@") ? name : `@${name}`,
-      };
-    }
-
     const liveStatsResponse = await fetch(
       `${socialCountsBaseUrl}/${encodeURIComponent(channelId)}`,
       {
@@ -117,7 +75,7 @@ async function getChannelStats(): Promise<ChannelStats> {
       fallbackChannelStats.videoCount;
 
     return {
-      name: name.startsWith("@") ? name : `@${name}`,
+      name: fallbackChannelStats.name,
       subscriberCount,
       viewCount,
       videoCount,
