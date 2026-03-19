@@ -1,11 +1,11 @@
 # W4Whiskers Portfolio
 
-This is the personal portfolio site for **W4Whiskers**. It showcases creative web work, Minecraft-related projects, UI experiments, and creator links in a custom interactive layout built with Next.js.
+This is the personal portfolio site for **W4Whiskers**. It showcases web projects, Minecraft-related work, UI experiments, and creator links in a custom interactive layout built with Next.js.
 
 ## What This Project Includes
 
 - A custom landing page with profile, socials, and live YouTube channel stats
-- A projects page for showing portfolio work
+- A projects page for portfolio work
 - A presentation page for a more visual showcase
 - Animated UI elements, glass-style panels, and particle effects
 - Responsive layout for desktop and mobile
@@ -49,6 +49,12 @@ npm run lint
 - `app/` - routes and page-level files
 - `components/` - reusable UI components
 - `public/` - images and static assets
+
+## Connect
+
+- YouTube: [@W4Whiskers1](https://www.youtube.com/@W4Whiskers1)
+- DeluxeSMP Discord: [discord.gg/gnmR3D5Yxk](https://discord.gg/gnmR3D5Yxk)
+- Catio Discord: [discord.gg/NjZg46TRmf](https://discord.gg/NjZg46TRmf)
 
 ## Notes
 
