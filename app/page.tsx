@@ -64,7 +64,8 @@ async function getChannelStats(): Promise<ChannelStats> {
     const channelId =
       decodeYouTubeText(
         html.match(/"channelId":"([^"]+)"/)?.[1] ??
-          html.match(/"externalId":"([^"]+)"/)?.[1],
+          html.match(/"externalId":"([^"]+)"/)?.[1] ??
+          html.match(/"browseId":"([^"]+)"/)?.[1],
       ) ?? undefined;
 
     if (!channelId) {
