@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import LocationBadge from "@/components/LocationBadge";
 import SiteNavbar from "@/components/SiteNavbar";
@@ -28,6 +28,40 @@ type HomeContentProps = {
 export default function HomeContent({ channelStats }: HomeContentProps) {
   const [hireFocus, setHireFocus] = useState(false);
   const [showMoreOpen, setShowMoreOpen] = useState(false);
+  const [pageViews, setPageViews] = useState<number | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadViewCount() {
+      try {
+        const response = await fetch("/api/view", { cache: "no-store" });
+
+        if (!response.ok) {
+          return;
+        }
+
+        const data = (await response.json()) as {
+          enabled: boolean;
+          totalViews: number | null;
+        };
+
+        if (!isMounted || !data.enabled || typeof data.totalViews !== "number") {
+          return;
+        }
+
+        setPageViews(data.totalViews);
+      } catch {
+        // Keep the UI quiet if storage is not configured.
+      }
+    }
+
+    void loadViewCount();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const socialLinks = [
     {
@@ -249,6 +283,16 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       Age 15
                     </span>
                   </div>
+
+                  {pageViews !== null ? (
+                    <span
+                      className={`glass-chip rounded-full border border-white/12 px-4 py-2 transition-all duration-300 ${
+                        hireFocus ? "hire-focus-muted" : ""
+                      }`}
+                    >
+                      {pageViews.toLocaleString()} Views
+                    </span>
+                  ) : null}
                 </div>
 
                 <p
