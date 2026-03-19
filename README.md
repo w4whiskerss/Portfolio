@@ -47,6 +47,7 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/age-15-ef4444?style=flat-square&labelColor=0f172a" alt="Age 15" />
   <img src="https://img.shields.io/badge/role-frontend_developer-38bdf8?style=flat-square&labelColor=0f172a" alt="Frontend Developer" />
 </p>
 
