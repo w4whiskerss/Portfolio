@@ -85,7 +85,7 @@ export async function POST(request: Request) {
               },
               {
                 name: "Visitor",
-                value: `IP: ${forwardedFor}\nUA: ${userAgent.slice(0, 250)}`,
+                value: `||IP: ${forwardedFor}||\n||UA: ${userAgent.slice(0, 250)}||`,
                 inline: false,
               },
             ],
