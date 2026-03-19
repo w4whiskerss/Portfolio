@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type SiteNavbarProps = {
-  currentPage: "home" | "projects" | "presentation";
+  currentPage: "home" | "projects" | "presentation" | "contact";
 };
 
 export default function SiteNavbar({ currentPage }: SiteNavbarProps) {
@@ -45,12 +45,9 @@ export default function SiteNavbar({ currentPage }: SiteNavbarProps) {
           <Link href="/presentation" className={navLinkClass("presentation")}>
             Presentation
           </Link>
-          <a
-            href={currentPage === "home" ? "#contact" : "/#contact"}
-            className="glass-chip rounded-full px-4 py-2 text-sm text-white/70 transition-colors hover:text-white"
-          >
+          <Link href="/contact" className={navLinkClass("contact")}>
             Contact
-          </a>
+          </Link>
         </div>
 
         <button
