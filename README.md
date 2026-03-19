@@ -4,8 +4,11 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/portfolio-live_preview-f97316?style=flat-square&labelColor=111827" alt="Portfolio badge" />
+  &nbsp;&nbsp;
   <img src="https://img.shields.io/badge/stack-next.js-111827?style=flat-square&labelColor=2563eb&logo=nextdotjs&logoColor=white" alt="Next.js badge" />
+  &nbsp;&nbsp;
   <img src="https://img.shields.io/badge/style-glass_ui-2563eb?style=flat-square&labelColor=0f172a" alt="Glass UI badge" />
+  &nbsp;&nbsp;
   <img src="https://img.shields.io/badge/focus-creator_first-16a34a?style=flat-square&labelColor=0f172a" alt="Creator first badge" />
 </p>
 
@@ -31,8 +34,11 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/websites-60a5fa?style=flat-square&labelColor=0f172a" alt="Websites badge" />
+  &nbsp;
   <img src="https://img.shields.io/badge/minecraft_mods-22c55e?style=flat-square&labelColor=0f172a" alt="Minecraft Mods badge" />
+  &nbsp;
   <img src="https://img.shields.io/badge/datapack_systems-f97316?style=flat-square&labelColor=0f172a" alt="Datapack Systems badge" />
+  &nbsp;
   <img src="https://img.shields.io/badge/ui_experiments-e879f9?style=flat-square&labelColor=0f172a" alt="UI Experiments badge" />
 </p>
 
