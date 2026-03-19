@@ -3,7 +3,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/portfolio-live_preview-f97316?style=flat-square&labelColor=111827" alt="Portfolio badge" />
+  <a href="https://w4whiskers.vercel.app">
+    <img src="https://img.shields.io/badge/portfolio-live_preview-f97316?style=flat-square&labelColor=111827" alt="Portfolio badge" />
+  </a>
   &nbsp;&nbsp;
   <img src="https://img.shields.io/badge/stack-next.js-111827?style=flat-square&labelColor=2563eb&logo=nextdotjs&logoColor=white" alt="Next.js badge" />
   &nbsp;&nbsp;
