@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import SiteNavbar from "@/components/SiteNavbar";
 
 const contactCards = [
@@ -60,29 +61,33 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {contactCards.map((card, index) => (
-                <a
-                  key={card.href}
-                  href={card.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`glass-chip group rounded-[1.6rem] border border-white/12 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 animate-pop-up-delay-${Math.min(index + 2, 5)}`}
-                >
-                  <p className="text-xs tracking-[0.24em] text-white/45 uppercase">
-                    {card.eyebrow}
-                  </p>
-                  <p className="mt-3 text-xl font-semibold text-white">
-                    {card.title}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-white/62">
-                    {card.description}
-                  </p>
-                  <span className="mt-4 inline-flex text-sm font-medium text-orange-200 transition-colors duration-300 group-hover:text-orange-100">
-                    {card.action}
-                  </span>
-                </a>
-              ))}
+            <div className="space-y-4">
+              <ContactForm />
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {contactCards.map((card, index) => (
+                  <a
+                    key={card.href}
+                    href={card.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`glass-chip group rounded-[1.6rem] border border-white/12 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 animate-pop-up-delay-${Math.min(index + 2, 5)}`}
+                  >
+                    <p className="text-xs tracking-[0.24em] text-white/45 uppercase">
+                      {card.eyebrow}
+                    </p>
+                    <p className="mt-3 text-xl font-semibold text-white">
+                      {card.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/62">
+                      {card.description}
+                    </p>
+                    <span className="mt-4 inline-flex text-sm font-medium text-orange-200 transition-colors duration-300 group-hover:text-orange-100">
+                      {card.action}
+                    </span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </section>
