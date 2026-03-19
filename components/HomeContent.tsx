@@ -14,6 +14,9 @@ type ChannelStats = {
   url: string;
 };
 
+const youtubeChannelId = "UCHQ6YLMWEidDw0LqjBTDLmg";
+const socialCountsBaseUrl = "https://api.socialcounts.org/youtube-live-subscriber-count";
+
 const skills = [
   "Web Development",
   "Minecraft Mods",
@@ -30,6 +33,92 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
   const [showMoreOpen, setShowMoreOpen] = useState(false);
   const [pageViews, setPageViews] = useState<number | null>(null);
   const [viewsReady, setViewsReady] = useState(false);
+  const [liveChannelStats, setLiveChannelStats] = useState(channelStats);
+
+  useEffect(() => {
+    setLiveChannelStats(channelStats);
+  }, [channelStats]);
+
+  useEffect(() => {
+    let isMounted = true;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
+
+    const formatCompactCount = (value: number | undefined) => {
+      if (typeof value !== "number" || Number.isNaN(value)) {
+        return undefined;
+      }
+
+      return new Intl.NumberFormat("en", {
+        notation: "compact",
+        maximumFractionDigits: value >= 1000 ? 1 : 0,
+      }).format(value);
+    };
+
+    async function loadLiveChannelStats() {
+      try {
+        const response = await fetch(
+          `${socialCountsBaseUrl}/${youtubeChannelId}`,
+          { cache: "no-store" },
+        );
+
+        if (!response.ok) {
+          return;
+        }
+
+        const data = (await response.json()) as {
+          counters?: {
+            api?: {
+              subscriberCount?: number;
+              viewCount?: number;
+              videoCount?: number;
+            };
+            estimation?: {
+              subscriberCount?: number;
+              viewCount?: number;
+              videoCount?: number;
+            };
+          };
+        };
+
+        const apiCounts = data.counters?.api;
+        const estimatedCounts = data.counters?.estimation;
+        const subscriberCount = formatCompactCount(
+          apiCounts?.subscriberCount ?? estimatedCounts?.subscriberCount,
+        );
+        const viewCount = formatCompactCount(
+          apiCounts?.viewCount ?? estimatedCounts?.viewCount,
+        );
+        const videoCount = formatCompactCount(
+          apiCounts?.videoCount ?? estimatedCounts?.videoCount,
+        );
+
+        if (!isMounted || !subscriberCount || !viewCount || !videoCount) {
+          return;
+        }
+
+        setLiveChannelStats((current) => ({
+          ...current,
+          subscriberCount,
+          viewCount,
+          videoCount,
+        }));
+      } catch {
+        // Keep the server-rendered fallback if the client-side request fails.
+      }
+    }
+
+    void loadLiveChannelStats();
+    intervalId = setInterval(() => {
+      void loadLiveChannelStats();
+    }, 30000);
+
+    return () => {
+      isMounted = false;
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [channelStats]);
 
   useEffect(() => {
     let isMounted = true;
@@ -75,7 +164,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
   const socialLinks = [
     {
       name: "YouTube",
-      href: channelStats.url,
+      href: liveChannelStats.url,
       background:
         "bg-gradient-to-br from-red-600 to-red-800 border-red-500/50",
       hoverCard: {
@@ -553,7 +642,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                   </div>
                   <div>
                     <p className="text-lg font-medium text-white">
-                      {channelStats.name}
+                      {liveChannelStats.name}
                     </p>
                     <p
                       className={`text-sm transition-all duration-300 ${
@@ -574,7 +663,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       Subs
                     </p>
                     <p className="mt-2 text-base font-medium text-white">
-                      {channelStats.subscriberCount}
+                      {liveChannelStats.subscriberCount}
                     </p>
                     <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-black/72 opacity-0 transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
                       <a
@@ -597,7 +686,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       Views
                     </p>
                     <p className="mt-2 text-base font-medium text-white">
-                      {channelStats.viewCount}
+                      {liveChannelStats.viewCount}
                     </p>
                   </div>
                   <div
@@ -609,7 +698,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       Videos
                     </p>
                     <p className="mt-2 text-base font-medium text-white">
-                      {channelStats.videoCount}
+                      {liveChannelStats.videoCount}
                     </p>
                   </div>
                 </div>
@@ -622,7 +711,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                   and falls back safely if YouTube changes anything.
                 </p>
                 <a
-                  href={channelStats.url}
+                  href={liveChannelStats.url}
                   target="_blank"
                   rel="noreferrer"
                   className={`mt-4 inline-flex text-sm font-medium transition-all duration-300 ${
