@@ -1,54 +1,26 @@
-# W4Whiskers Portfolio
+# W4Whiskers
 
-This is the personal portfolio site for **W4Whiskers**. It showcases web projects, Minecraft-related work, UI experiments, and creator links in a custom interactive layout built with Next.js.
+Personal portfolio for W4Whiskers.
 
-## What This Project Includes
+Web builder, Minecraft mod/dev systems creator, and UI experimenter.
 
-- A custom landing page with profile, socials, and live YouTube channel stats
-- A projects page for portfolio work
-- A presentation page for a more visual showcase
-- Animated UI elements, glass-style panels, and particle effects
-- Responsive layout for desktop and mobile
+## Preview
 
-## Tech Stack
+- Clean glass-style portfolio with animated panels and creator-focused design
+- Showcases web projects, Minecraft work, datapacks, and visual experiments
+- Includes live YouTube channel stats, social links, and project pages
+- Built to feel more like a personal space than a standard template
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Framer Motion
-- tsParticles
+## Focus
 
-## Running Locally
+- Websites
+- Minecraft Mods
+- Datapack Systems
+- UI Experiments
 
-Install dependencies:
+## Vibe
 
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Useful Scripts
-
-```bash
-npm run dev
-npm run build
-npm run start
-npm run lint
-```
-
-## Project Structure
-
-- `app/` - routes and page-level files
-- `components/` - reusable UI components
-- `public/` - images and static assets
+> If you never try you'll never know if you can succeed.
 
 ## Connect
 
@@ -56,6 +28,6 @@ npm run lint
 - DeluxeSMP Discord: [discord.gg/gnmR3D5Yxk](https://discord.gg/gnmR3D5Yxk)
 - Catio Discord: [discord.gg/NjZg46TRmf](https://discord.gg/NjZg46TRmf)
 
-## Notes
+## Built With
 
-The homepage pulls YouTube channel data for `@W4Whiskers1` and falls back safely if the live stats source is unavailable.
+Next.js, React, TypeScript, Tailwind CSS, Framer Motion, and tsParticles.
