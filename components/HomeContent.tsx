@@ -665,16 +665,18 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     <p className="mt-2 text-base font-medium text-white">
                       {liveChannelStats.subscriberCount}
                     </p>
-                    <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-black/72 opacity-0 transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
-                      <a
-                        href="https://www.youtube.com/@W4Whiskers1?sub_confirmation=1"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Subscribe to W4Whiskers1 on YouTube"
-                        className="Btn pointer-events-auto"
-                      >
-                        <span className="sr-only">Subscribe</span>
-                      </a>
+                    <div className="pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 z-20 w-max -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:translate-y-[-4px] group-hover:opacity-100">
+                      <div className="glass-surface rounded-[1rem] border border-white/12 px-4 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
+                        <a
+                          href="https://www.youtube.com/@W4Whiskers1?sub_confirmation=1"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="Subscribe to W4Whiskers1 on YouTube"
+                          className="Btn pointer-events-auto"
+                        >
+                          <span className="sr-only">Subscribe</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div
