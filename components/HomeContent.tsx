@@ -653,9 +653,9 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     </p>
                   </div>
                 </div>
-                <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div className="mt-5 grid grid-cols-1 gap-3 overflow-visible sm:grid-cols-3">
                   <div
-                    className={`glass-chip group relative rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300 ${
+                    className={`glass-chip group relative overflow-visible rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300 ${
                       hireFocus ? "hire-focus-important" : ""
                     }`}
                   >
