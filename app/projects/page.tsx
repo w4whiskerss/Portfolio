@@ -176,6 +176,22 @@ export default function ProjectsPage() {
                         >
                           Hosted on Vercel
                         </a>
+                        <a
+                          href="https://github.com/w4whiskerss/Portfolio"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          View Repository
+                        </a>
+                        <a
+                          href="https://github.com/w4whiskerss"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          GitHub Profile
+                        </a>
                       </div>
                     ) : null}
 
