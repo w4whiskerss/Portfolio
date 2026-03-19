@@ -1,36 +1,43 @@
-# 🚀 DeluxeSMP Network
+# 👋 Hey, I'm Whiskers
 
 <p align="center">
-  <img src="https://source.unsplash.com/1600x400/?minecraft,server" alt="Banner" />
+  <img src="https://source.unsplash.com/1600x400/?technology,code" alt="banner" />
 </p>
 
 <p align="center">
-  <b>A next-gen Minecraft experience built for performance, community, and fun.</b>
-</p>
-
----
-
-## ✨ Features
-
-- ⚡ High-performance server setup  
-- 🎮 Custom gameplay mechanics  
-- 🛒 In-game economy & crates  
-- 🏷️ Unique ranks & tags  
-- 🌍 Crossplay support (Java + Bedrock)  
-- 🔊 Voice chat integration  
-
----
-
-## 📸 Preview
-
-<p align="center">
-  <img src="https://source.unsplash.com/800x400/?minecraft,landscape" width="45%" />
-  <img src="https://source.unsplash.com/800x400/?minecraft,build" width="45%" />
+  <b>I build things that actually work the way I want.</b>
 </p>
 
 ---
 
-## 🔗 Quick Links
+## 🚀 About Me
+
+- 🧠 Developer focused on real projects, not just tutorials  
+- ⚙️ I like clean systems, automation, and control  
+- 🎮 Minecraft server developer (DeluxeSMP)  
+- 🌐 Web dev (React, Next.js, full-stack stuff)  
+
+---
+
+## 🧩 What I Do
+
+- 🔧 Build custom systems & tools  
+- 🌍 Create scalable Minecraft servers  
+- 💻 Develop modern web apps  
+- 🧪 Experiment with unique ideas  
+
+---
+
+## 📸 Projects Preview
+
+<p align="center">
+  <img src="https://source.unsplash.com/800x400/?programming,code" width="45%" />
+  <img src="https://source.unsplash.com/800x400/?gaming,setup" width="45%" />
+</p>
+
+---
+
+## 🔗 Connect With Me
 
 <p align="center">
   <a href="https://discord.gg/gnmR3D5Yxk">
@@ -48,41 +55,42 @@
 
 ---
 
-## 🧠 Tech Stack
+## 🛠 Tech Stack
 
-| Category        | Tools Used |
-|----------------|-----------|
-| Core           | Paper / Spigot |
-| Permissions    | LuckPerms |
-| Economy        | CoinsEngine, ExcellentShop |
-| Chat & Tags    | DeluxeTags, TAB |
-| Security       | Vulcan, AdvancedBan |
-| World          | WorldGuard, Multiverse |
-| Performance    | spark, Chunky, LagAssist |
+```txt
+Frontend  → React / Next.js
+Backend   → Node.js
+Game Dev  → Minecraft (Paper, Plugins)
+Tools     → Git, Linux, Automation
+````
 
 ---
 
-## 🎯 Vision
+## 🎯 Goal
 
-> Build a **smooth, scalable, and fun SMP** where players actually enjoy staying long-term.
+> Build cool, useful, and different stuff — not boring copy-paste projects.
 
 ---
 
-## 💬 Community
+## 📊 Stats
 
 <p align="center">
-  <img src="https://source.unsplash.com/800x300/?gaming,community" />
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight" />
 </p>
-
-- Chill vibes  
-- Active players  
-- Events & rewards  
 
 ---
 
-## 📢 Status
+## ⭐ Support
 
-```diff
-+ Server: Online
-+ Development: Active
-+ Updates: Frequent
+If you like what I do:
+
+* ⭐ Star my repos
+* 💬 Join my Discord
+* 📺 Check my YouTube
+
+---
+
+<p align="center">
+  built by <b>Whiskers</b>
+</p>
+```
