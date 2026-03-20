@@ -35,13 +35,13 @@ function renderDescription(project: (typeof projects)[number]) {
     return (
       <>
         <p>
-          Am working on a minecraft server called <strong>DeluxeSMP</strong>,
+          I&apos;m building a Minecraft server called <strong>DeluxeSMP</strong>
           with my friend <strong>Yaobi</strong>.
         </p>
         <p>
-          Am trying to make it <strong>one of the best minecraft servers</strong>
-          , its main pvp aspect is <strong>MacePVP</strong>, and i have poured
-          my <strong>hard work and heart</strong> into it.
+          I want it to become <strong>one of the best Minecraft servers</strong>.
+          Its main PvP focus is <strong>MacePvP</strong>, and I&apos;ve poured a
+          lot of <strong>time and heart</strong> into it.
         </p>
       </>
     );
@@ -51,13 +51,13 @@ function renderDescription(project: (typeof projects)[number]) {
     return (
       <>
         <p>
-          This website is the <strong>pure representiation</strong> of this
-          project this is literally just it :D
+          This site is my personal portfolio and the best snapshot of the kind
+          of work and style I want to show.
         </p>
         <p>
-          Am using <strong>Vercel</strong> to host this website, This
-          website has took <strong>2 weeks</strong> and am still making
-          changes <strong>every day</strong> in it
+          It&apos;s hosted on <strong>Vercel</strong>, took around{" "}
+          <strong>2 weeks</strong> to build, and I&apos;m still improving it{" "}
+          <strong>every day</strong>.
         </p>
       </>
     );
@@ -65,9 +65,9 @@ function renderDescription(project: (typeof projects)[number]) {
 
   return (
     <p>
-      Player batch is a mod that is a <strong>extenstion</strong> to a mod
-      named <strong>Carpet</strong> that helps <strong>spawn 100+ Fake Players
-      at once</strong> without needing to type the commands again and again
+      PlayerBatch is an <strong>extension</strong> for <strong>Carpet</strong>
+      that helps <strong>spawn 100+ fake players at once</strong> without
+      typing the same commands over and over again.
     </p>
   );
 }
@@ -161,7 +161,7 @@ export default function ProjectsPage() {
                           label="Copy IP"
                         />
                         <a href="#" className="project-action-button">
-                          More about this Project!
+                          More About This Project
                         </a>
                       </div>
                     ) : null}
@@ -201,7 +201,7 @@ export default function ProjectsPage() {
                           Download Mod
                         </a>
                         <a href="#" className="project-action-button">
-                          Know more about this Project
+                          Learn More About This Project
                         </a>
                       </div>
                     ) : null}

@@ -170,7 +170,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
       hoverCard: {
         image: "/logo.jpg",
         title: "W4Whiskers",
-        subtitle: "Youtube Channel",
+        subtitle: "YouTube Channel",
       },
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8 text-white">
@@ -368,7 +368,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     <div className="pointer-events-none absolute bottom-[calc(100%+14px)] left-1/2 z-[999] w-max -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:translate-y-[-4px] group-hover:opacity-100">
                       <div className="glass-surface rounded-[1rem] border border-white/12 px-4 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
                         <p className="text-sm font-medium text-white/88">
-                          Under 15 Minor
+                          Under 18
                         </p>
                       </div>
                     </div>
@@ -378,7 +378,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                         hireFocus ? "hire-focus-muted" : ""
                       }`}
                     >
-                      Age 15
+                      Age -18
                     </span>
                   </div>
 
@@ -422,7 +422,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                   <span className={hireFocus ? "hire-focus-highlight" : ""}>
                     UI experiments
                   </span>{" "}
-                  with a clean modern style and creator-first mindset.
+                  with a clean, modern style and a creator-first mindset.
                 </p>
               </div>
 
@@ -607,7 +607,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       hireFocus ? "hire-focus-important" : "text-orange-100/80"
                     }`}
                   >
-                    YouTuber | Builder | Mod Dev
+                    YouTuber | Builder | Mod Developer
                   </p>
                 </div>
                 <div className="overflow-hidden rounded-full border border-white/20 bg-white/12 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
@@ -649,7 +649,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                         hireFocus ? "hire-focus-muted" : "text-white/55"
                       }`}
                     >
-                      Pulled from W4Whiskers1 YouTube channel automatically
+                      Live stats pulled from the W4Whiskers1 YouTube channel
                     </p>
                   </div>
                 </div>
@@ -709,8 +709,8 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     hireFocus ? "hire-focus-muted" : "text-white/60"
                   }`}
                 >
-                  This card refreshes from W4Whiskers1&apos;s Youtube channel data
-                  and falls back safely if YouTube changes anything.
+                  This card refreshes from W4Whiskers1&apos;s YouTube data and
+                  falls back safely if anything changes.
                 </p>
                 <a
                   href={liveChannelStats.url}
