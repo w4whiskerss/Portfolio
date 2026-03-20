@@ -709,8 +709,8 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     hireFocus ? "hire-focus-muted" : "text-white/60"
                   }`}
                 >
-                  This card refreshes from W4Whiskers1&apos;s YouTube data and
-                  falls back safely if anything changes.
+                  These are my live YouTube stats. If YouTube breaks something,
+                  this card falls back instead of bugging out.
                 </p>
                 <a
                   href={liveChannelStats.url}

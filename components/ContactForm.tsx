@@ -88,8 +88,7 @@ export default function ContactForm() {
             Send a Message
           </h2>
           <p className="mt-2 text-sm leading-6 text-white/62">
-            Fill this out and it will forward straight to Discord once the
-            webhook is connected.
+            Fill this out and it goes straight to my Discord.
           </p>
         </div>
 
