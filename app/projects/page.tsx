@@ -6,6 +6,7 @@ type Project = {
   type: string;
   logo: string;
   banner?: string;
+  bannerClassName?: string;
   logoAlt: string;
   logoClassName: string;
   actions: "portfolio" | "playerbatch" | "bloodline";
@@ -17,6 +18,7 @@ const projects: readonly Project[] = [
     type: "Minecraft Server + Plugin",
     logo: "/BloodLine Logo.png",
     banner: "/bloodlinesmp.png",
+    bannerClassName: "object-cover object-center object-[center_38%]",
     logoAlt: "Bloodline SMP logo",
     logoClassName: "object-contain scale-[0.72]",
     actions: "bloodline",
@@ -110,10 +112,10 @@ export default function ProjectsPage() {
                         src={project.banner}
                         alt={`${project.title} background banner`}
                         fill
-                        className="object-cover brightness-[0.38]"
+                        className={project.bannerClassName ?? "object-cover"}
                         sizes="(min-width: 1024px) 900px, 100vw"
                       />
-                      <div className="absolute inset-0 bg-black/90" />
+                      <div className="absolute inset-0 bg-black/92" />
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62),rgba(0,0,0,0.96))]" />
                     </>
                   ) : null}
