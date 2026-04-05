@@ -104,7 +104,7 @@ export default function ProjectsPage() {
               {projects.map((project, index) => (
                 <article
                   key={project.title}
-                  className={`glass-surface glass-panel-strong animate-pop-up-delay-${Math.min(index + 2, 5)} relative rounded-[1.9rem] border border-white/10 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]`}
+                  className={`glass-surface glass-panel-strong animate-pop-up-delay-${Math.min(index + 2, 5)} relative overflow-visible rounded-[1.9rem] border border-white/10 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]`}
                 >
                   {project.banner ? (
                     <>
@@ -146,11 +146,11 @@ export default function ProjectsPage() {
                           {project.type}
                         </span>
                         {project.actions === "bloodline" ? (
-                          <div className="group relative">
+                          <div className="group relative z-[100]">
                             <span className="glass-chip rounded-full border border-amber-300/20 px-4 py-2 text-xs text-amber-100/80">
                               WIP
                             </span>
-                            <div className="pointer-events-none absolute bottom-[calc(100%+10px)] left-1/2 z-20 w-max -translate-x-1/2 rounded-full border border-white/12 bg-black/85 px-3 py-1.5 text-[11px] tracking-[0.2em] text-white/80 opacity-0 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-all duration-200 group-hover:translate-y-[-4px] group-hover:opacity-100">
+                            <div className="pointer-events-none absolute bottom-[calc(100%+10px)] left-1/2 z-[200] w-max -translate-x-1/2 rounded-full border border-white/12 bg-black/85 px-3 py-1.5 text-[11px] tracking-[0.2em] text-white/80 opacity-0 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-all duration-200 group-hover:translate-y-[-4px] group-hover:opacity-100">
                               Work In Progress
                             </div>
                           </div>
