@@ -1,17 +1,7 @@
 import Image from "next/image";
-import CopyButton from "@/components/CopyButton";
 import SiteNavbar from "@/components/SiteNavbar";
 
 const projects = [
-  {
-    title: "DeluxeSMP",
-    type: "Website + Minecraft Server",
-    logo: "/deluxesmp.png",
-    banner: "/deluxesmpbanner.png",
-    logoAlt: "DeluxeSMP logo",
-    logoClassName: "object-contain p-1.5",
-    actions: "deluxe",
-  },
   {
     title: "Personal Portfolio",
     type: "Website",
@@ -31,22 +21,6 @@ const projects = [
 ] as const;
 
 function renderDescription(project: (typeof projects)[number]) {
-  if (project.actions === "deluxe") {
-    return (
-      <>
-        <p>
-          I&apos;m building a Minecraft server called <strong>DeluxeSMP</strong>
-          with my friend <strong>Yaobi</strong>.
-        </p>
-        <p>
-          I want it to become <strong>one of the best Minecraft servers</strong>.
-          Its main PvP focus is <strong>MacePvP</strong>, and I&apos;ve poured a
-          lot of <strong>time and heart</strong> into it.
-        </p>
-      </>
-    );
-  }
-
   if (project.actions === "portfolio") {
     return (
       <>
@@ -145,26 +119,6 @@ export default function ProjectsPage() {
                     <div className="project-description space-y-3 text-sm leading-7 text-white/72 sm:text-base">
                       {renderDescription(project)}
                     </div>
-
-                    {project.actions === "deluxe" ? (
-                      <div className="flex flex-wrap gap-3">
-                        <a
-                          href="https://discord.gg/gnmR3D5Yxk"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="project-action-button project-action-button-orange"
-                        >
-                          Join Discord Server
-                        </a>
-                        <CopyButton
-                          value="mc.deluxesmp.xyz"
-                          label="Copy IP"
-                        />
-                        <a href="#" className="project-action-button">
-                          More About This Project
-                        </a>
-                      </div>
-                    ) : null}
 
                     {project.actions === "portfolio" ? (
                       <div className="flex flex-wrap gap-3">
