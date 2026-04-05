@@ -1,7 +1,17 @@
 import Image from "next/image";
 import SiteNavbar from "@/components/SiteNavbar";
 
-const projects = [
+type Project = {
+  title: string;
+  type: string;
+  logo: string;
+  banner?: string;
+  logoAlt: string;
+  logoClassName: string;
+  actions: "portfolio" | "playerbatch";
+};
+
+const projects: readonly Project[] = [
   {
     title: "Personal Portfolio",
     type: "Website",
@@ -20,7 +30,7 @@ const projects = [
   },
 ] as const;
 
-function renderDescription(project: (typeof projects)[number]) {
+function renderDescription(project: Project) {
   if (project.actions === "portfolio") {
     return (
       <>
@@ -69,7 +79,7 @@ export default function ProjectsPage() {
                   key={project.title}
                   className={`glass-surface glass-panel-strong animate-pop-up-delay-${Math.min(index + 2, 5)} relative rounded-[1.9rem] border border-white/10 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]`}
                 >
-                  {"banner" in project ? (
+                  {project.banner ? (
                     <>
                       <Image
                         src={project.banner}
