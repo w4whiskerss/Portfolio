@@ -15,7 +15,7 @@ const createParticleOptions = (theme: "light" | "dark"): ISourceOptions => {
     },
     particles: {
       number: {
-        value: 90,
+        value: 48,
         density: { enable: true, width: 800, height: 800 },
       },
       color: {
@@ -32,14 +32,14 @@ const createParticleOptions = (theme: "light" | "dark"): ISourceOptions => {
       },
       links: {
         enable: true,
-        distance: 150,
+        distance: 120,
         color: isLight ? "#000000" : "#ffffff",
-        opacity: isLight ? 0.25 : 0.4,
+        opacity: isLight ? 0.18 : 0.28,
         width: 1,
       },
       move: {
         enable: true,
-        speed: 1,
+        speed: 0.65,
         direction: "none",
         outModes: {
           default: "bounce",
@@ -49,7 +49,7 @@ const createParticleOptions = (theme: "light" | "dark"): ISourceOptions => {
     interactivity: {
       events: {
         onHover: {
-          enable: true,
+          enable: false,
           mode: "grab",
         },
         resize: {
@@ -65,7 +65,7 @@ const createParticleOptions = (theme: "light" | "dark"): ISourceOptions => {
         },
       },
     },
-    detectRetina: true,
+    detectRetina: false,
   };
 };
 

@@ -1,6 +1,6 @@
 import HomeContent from "@/components/HomeContent";
 
-const channelUrl = "https://www.youtube.com/@W4Whiskers1";
+const latestChannelUrl = "https://youtube.com/W4Whiskerss";
 const channelId = "UCHQ6YLMWEidDw0LqjBTDLmg";
 const socialCountsBaseUrl = "https://api.socialcounts.org/youtube-live-subscriber-count";
 
@@ -13,11 +13,11 @@ type ChannelStats = {
 };
 
 const fallbackChannelStats: ChannelStats = {
-  name: "@W4Whiskers1",
+  name: "@W4Whiskerss",
   subscriberCount: "YouTube loading",
   viewCount: "Stats unavailable",
   videoCount: "Channel live",
-  url: channelUrl,
+  url: latestChannelUrl,
 };
 
 function formatCompactCount(value: number | undefined) {
@@ -79,7 +79,7 @@ async function getChannelStats(): Promise<ChannelStats> {
       subscriberCount,
       viewCount,
       videoCount,
-      url: channelUrl,
+      url: latestChannelUrl,
     };
   } catch {
     return fallbackChannelStats;

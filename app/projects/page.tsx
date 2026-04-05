@@ -8,10 +8,19 @@ type Project = {
   banner?: string;
   logoAlt: string;
   logoClassName: string;
-  actions: "portfolio" | "playerbatch";
+  actions: "portfolio" | "playerbatch" | "bloodline";
 };
 
 const projects: readonly Project[] = [
+  {
+    title: "Bloodline SMP",
+    type: "Minecraft Server + Plugin",
+    logo: "/BloodLine Logo.png",
+    banner: "https://media.essential.gg/a010cf54-7831-415b-e0e8-e04d50e6c200",
+    logoAlt: "Bloodline SMP logo",
+    logoClassName: "object-cover",
+    actions: "bloodline",
+  },
   {
     title: "Personal Portfolio",
     type: "Website",
@@ -31,6 +40,22 @@ const projects: readonly Project[] = [
 ] as const;
 
 function renderDescription(project: Project) {
+  if (project.actions === "bloodline") {
+    return (
+      <>
+        <p>
+          <strong>Bloodline SMP</strong> is my own SMP project that I&apos;m
+          building from the ground up with custom gameplay ideas, server setup,
+          and a matching plugin/mod stack.
+        </p>
+        <p>
+          I&apos;m shaping it into a darker, more original Minecraft world with
+          custom systems, active development, and a community-first vibe.
+        </p>
+      </>
+    );
+  }
+
   if (project.actions === "portfolio") {
     return (
       <>
@@ -118,10 +143,15 @@ export default function ProjectsPage() {
                         <span className="glass-chip rounded-full border border-white/12 px-4 py-2 text-xs text-white/65">
                           {project.type}
                         </span>
-                        {project.actions === "playerbatch" ? (
-                          <span className="glass-chip rounded-full border border-amber-300/20 px-4 py-2 text-xs text-amber-100/80">
-                            Under Review
-                          </span>
+                        {project.actions === "bloodline" ? (
+                          <div className="group relative">
+                            <span className="glass-chip rounded-full border border-amber-300/20 px-4 py-2 text-xs text-amber-100/80">
+                              WIP
+                            </span>
+                            <div className="pointer-events-none absolute bottom-[calc(100%+10px)] left-1/2 z-20 w-max -translate-x-1/2 rounded-full border border-white/12 bg-black/85 px-3 py-1.5 text-[11px] tracking-[0.2em] text-white/80 opacity-0 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-all duration-200 group-hover:translate-y-[-4px] group-hover:opacity-100">
+                              Work In Progress
+                            </div>
+                          </div>
                         ) : null}
                       </div>
                     </div>
@@ -161,11 +191,45 @@ export default function ProjectsPage() {
 
                     {project.actions === "playerbatch" ? (
                       <div className="flex flex-wrap gap-3">
-                        <a href="#" className="project-action-button project-action-button-orange">
+                        <a
+                          href="https://modrinth.com/mod/playerbatch"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button project-action-button-orange"
+                        >
                           Download Mod
                         </a>
                         <a href="#" className="project-action-button">
                           Learn More About This Project
+                        </a>
+                      </div>
+                    ) : null}
+
+                    {project.actions === "bloodline" ? (
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href="https://dsc.gg/blodsmp"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button project-action-button-orange"
+                        >
+                          Join Discord
+                        </a>
+                        <a
+                          href="https://modrinth.com/plugin/bloodlinesmp"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          Download Plugin/Mod
+                        </a>
+                        <a
+                          href="https://github.com/w4whiskerss/bloodline-smp"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          View Repository
                         </a>
                       </div>
                     ) : null}

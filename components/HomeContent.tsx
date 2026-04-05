@@ -16,6 +16,7 @@ type ChannelStats = {
 
 const youtubeChannelId = "UCHQ6YLMWEidDw0LqjBTDLmg";
 const socialCountsBaseUrl = "https://api.socialcounts.org/youtube-live-subscriber-count";
+const youtubeChannelHandleUrl = "https://youtube.com/W4Whiskerss";
 
 const skills = [
   "Web Development",
@@ -110,7 +111,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
     void loadLiveChannelStats();
     intervalId = setInterval(() => {
       void loadLiveChannelStats();
-    }, 30000);
+    }, 300000);
 
     return () => {
       isMounted = false;
@@ -151,7 +152,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
     void loadViewCount();
     intervalId = setInterval(() => {
       void loadViewCount();
-    }, 15000);
+    }, 60000);
 
     return () => {
       isMounted = false;
@@ -633,7 +634,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                         hireFocus ? "hire-focus-muted" : "text-white/55"
                       }`}
                     >
-                      Live stats pulled from the W4Whiskers1 YouTube channel
+                      Live stats pulled from the W4Whiskerss YouTube channel
                     </p>
                   </div>
                 </div>
@@ -652,10 +653,10 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     <div className="pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 z-[9999] w-max -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:translate-y-[-4px] group-hover:opacity-100">
                       <div className="glass-surface rounded-[1rem] border border-white/12 px-4 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
                         <a
-                          href="https://www.youtube.com/@W4Whiskers1?sub_confirmation=1"
+                          href={`${youtubeChannelHandleUrl}?sub_confirmation=1`}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label="Subscribe to W4Whiskers1 on YouTube"
+                          aria-label="Subscribe to W4Whiskerss on YouTube"
                           className="Btn pointer-events-auto"
                         >
                           <span className="sr-only">Subscribe</span>
@@ -704,7 +705,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     hireFocus ? "hire-focus-important" : "text-orange-200 hover:text-orange-100"
                   }`}
                 >
-                  youtube.com/@W4Whiskers1
+                  youtube.com/W4Whiskerss
                 </a>
               </div>
             </div>
