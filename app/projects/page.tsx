@@ -16,9 +16,9 @@ const projects: readonly Project[] = [
     title: "Bloodline SMP",
     type: "Minecraft Server + Plugin",
     logo: "/BloodLine Logo.png",
-    banner: "https://media.essential.gg/a010cf54-7831-415b-e0e8-e04d50e6c200",
+    banner: "/bloodlinesmp.png",
     logoAlt: "Bloodline SMP logo",
-    logoClassName: "object-cover",
+    logoClassName: "object-contain scale-[0.72]",
     actions: "bloodline",
   },
   {
