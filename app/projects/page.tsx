@@ -115,8 +115,8 @@ export default function ProjectsPage() {
                         className={project.bannerClassName ?? "object-cover"}
                         sizes="(min-width: 1024px) 900px, 100vw"
                       />
-                      <div className="absolute inset-0 bg-black/92" />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62),rgba(0,0,0,0.96))]" />
+                      <div className="absolute inset-0 bg-black/95" />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.74),rgba(0,0,0,0.98))]" />
                     </>
                   ) : null}
 
