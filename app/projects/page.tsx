@@ -210,6 +210,14 @@ export default function ProjectsPage() {
                     {project.actions === "bloodline" ? (
                       <div className="flex flex-wrap gap-3">
                         <a
+                          href="https://bloodlinesmp.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          Visit Website
+                        </a>
+                        <a
                           href="https://dsc.gg/blodsmp"
                           target="_blank"
                           rel="noreferrer"

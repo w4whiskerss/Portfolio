@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   authors: [{ name: "W4Whiskers" }],
   creator: "W4Whiskers",
   publisher: "W4Whiskers",
+  verification: {
+    google: "xkA7CZ8AABLEoqHnx5ewqjOXu6WMgmoeu4hF12HClPo",
+  },
   alternates: {
     canonical: "/",
   },
