@@ -18,7 +18,7 @@ const projects: readonly Project[] = [
     type: "Minecraft Server + Plugin",
     logo: "/BloodLine Logo.png",
     banner: "/bloodlinesmp.png",
-    bannerClassName: "object-cover object-center object-[center_38%]",
+    bannerClassName: "object-cover object-center object-[center_38%] opacity-55",
     logoAlt: "Bloodline SMP logo",
     logoClassName: "object-contain scale-[0.72]",
     actions: "bloodline",
