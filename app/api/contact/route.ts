@@ -33,10 +33,18 @@ export async function POST(request: Request) {
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const gmailPattern = /^[A-Za-z0-9._%+-]+@gmail\.com$/i;
 
     if (!emailPattern.test(email)) {
       return NextResponse.json(
         { message: "Enter a valid email address." },
+        { status: 400 },
+      );
+    }
+
+    if (!gmailPattern.test(email)) {
+      return NextResponse.json(
+        { message: "Please use a real Gmail address." },
         { status: 400 },
       );
     }

@@ -88,7 +88,7 @@ export default function ContactForm() {
             Send a Message
           </h2>
           <p className="mt-2 text-sm leading-6 text-white/62">
-            Fill this out and it goes straight to my Discord.
+            Use a real Gmail address and it goes straight to my Discord.
           </p>
         </div>
 
@@ -100,7 +100,8 @@ export default function ContactForm() {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
-            placeholder="you@example.com"
+            pattern="^[A-Za-z0-9._%+-]+@gmail\.com$"
+            placeholder="you@gmail.com"
             className="w-full rounded-2xl border border-white/12 bg-white/5 px-4 py-3 text-white outline-none transition-colors placeholder:text-white/28 focus:border-orange-300/40"
           />
         </label>
@@ -124,7 +125,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className="button-name w-full justify-center disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {isSubmitting ? "Sending..." : "Send to Discord"}
+          {isSubmitting ? "Sending..." : "Send with Gmail"}
         </button>
 
         {submitState.type !== "idle" ? (

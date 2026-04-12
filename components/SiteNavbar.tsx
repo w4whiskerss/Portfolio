@@ -25,7 +25,7 @@ export default function SiteNavbar({ currentPage }: SiteNavbarProps) {
           className="glass-chip inline-flex items-center gap-3 rounded-full border border-white/10 px-2 py-2 pr-4 transition-transform duration-300 hover:-translate-y-0.5"
         >
           <Image
-            src="/logo.jpg"
+            src="/logo2.png"
             alt="W4Whiskers home"
             width={44}
             height={44}

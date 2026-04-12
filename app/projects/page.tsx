@@ -9,7 +9,12 @@ type Project = {
   bannerClassName?: string;
   logoAlt: string;
   logoClassName: string;
-  actions: "portfolio" | "playerbatch" | "bloodline";
+  actions:
+    | "portfolio"
+    | "playerbatch"
+    | "bloodline"
+    | "bloodlinewiki"
+    | "w4subgoals";
 };
 
 const projects: readonly Project[] = [
@@ -26,10 +31,26 @@ const projects: readonly Project[] = [
   {
     title: "Personal Portfolio",
     type: "Website",
-    logo: "/logo.jpg",
+    logo: "/logo2.png",
     logoAlt: "Personal Portfolio logo",
     logoClassName: "object-cover",
     actions: "portfolio",
+  },
+  {
+    title: "BloodlineWiki",
+    type: "Website",
+    logo: "/BloodLine Logo.png",
+    logoAlt: "BloodlineWiki logo",
+    logoClassName: "object-contain scale-[0.72]",
+    actions: "bloodlinewiki",
+  },
+  {
+    title: "W4SubGoals",
+    type: "Website",
+    logo: "/logo2.png",
+    logoAlt: "W4SubGoals logo",
+    logoClassName: "object-cover",
+    actions: "w4subgoals",
   },
   {
     title: "PlayerBatch",
@@ -70,7 +91,32 @@ function renderDescription(project: Project) {
           <strong>2 weeks</strong> to build, and I&apos;m still improving it{" "}
           <strong>every day</strong>.
         </p>
+        <p>
+          I&apos;m also making sure the experience adapts cleanly across{" "}
+          <strong>mobile</strong>, <strong>tablet</strong>, and{" "}
+          <strong>TV</strong> screens.
+        </p>
       </>
+    );
+  }
+
+  if (project.actions === "bloodlinewiki") {
+    return (
+      <p>
+        <strong>BloodlineWiki</strong> is the knowledge hub for the Bloodline
+        project, where I can document systems, guides, and useful references in
+        one place.
+      </p>
+    );
+  }
+
+  if (project.actions === "w4subgoals") {
+    return (
+      <p>
+        <strong>W4SubGoals</strong> is a live subscriber countdown website I use
+        to track growth milestones and keep stream or channel goals visible in
+        real time.
+      </p>
     );
   }
 
@@ -188,6 +234,15 @@ export default function ProjectsPage() {
                         >
                           GitHub Profile
                         </a>
+                        <span className="glass-chip rounded-full border border-white/12 px-4 py-2 text-xs text-white/70">
+                          Mobile
+                        </span>
+                        <span className="glass-chip rounded-full border border-white/12 px-4 py-2 text-xs text-white/70">
+                          Tablet
+                        </span>
+                        <span className="glass-chip rounded-full border border-white/12 px-4 py-2 text-xs text-white/70">
+                          TV
+                        </span>
                       </div>
                     ) : null}
 
@@ -201,7 +256,20 @@ export default function ProjectsPage() {
                         >
                           Download Mod
                         </a>
-                        <a href="#" className="project-action-button">
+                        <a
+                          href="https://playercommander.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          PlayerBatch Command Generator
+                        </a>
+                        <a
+                          href="https://playerbatch-wiki.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
                           Learn More About This Project
                         </a>
                       </div>
@@ -216,6 +284,14 @@ export default function ProjectsPage() {
                           className="project-action-button"
                         >
                           Visit Website
+                        </a>
+                        <a
+                          href="https://bloodlinemodz.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          BloodlineWiki
                         </a>
                         <a
                           href="https://dsc.gg/blodsmp"
@@ -240,6 +316,40 @@ export default function ProjectsPage() {
                           className="project-action-button"
                         >
                           View Repository
+                        </a>
+                      </div>
+                    ) : null}
+
+                    {project.actions === "bloodlinewiki" ? (
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href="https://bloodlinemodz.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          Visit Website
+                        </a>
+                        <a
+                          href="https://bloodlinesmp.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          Main Bloodline Site
+                        </a>
+                      </div>
+                    ) : null}
+
+                    {project.actions === "w4subgoals" ? (
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href="https://w4subgoals.vercel.app/"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          Open Countdown
                         </a>
                       </div>
                     ) : null}

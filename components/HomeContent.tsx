@@ -169,7 +169,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
       background:
         "bg-gradient-to-br from-red-600 to-red-800 border-red-500/50",
       hoverCard: {
-        image: "/logo.jpg",
+        image: "/logo2.png",
         title: "W4Whiskers",
         subtitle: "YouTube Channel",
       },
@@ -597,7 +597,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                 </div>
                 <div className="overflow-hidden rounded-full border border-white/20 bg-white/12 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
                   <Image
-                    src="/logo.jpg"
+                    src="/logo2.png"
                     alt="W4Whiskers logo"
                     width={72}
                     height={72}
@@ -618,7 +618,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                 <div className="mt-3 flex items-center gap-3">
                   <div className="relative h-12 w-12 overflow-hidden rounded-full border border-orange-200/20">
                     <Image
-                      src="/logo.jpg"
+                      src="/logo2.png"
                       alt="W4Whiskers YouTube logo"
                       fill
                       className="object-cover"
