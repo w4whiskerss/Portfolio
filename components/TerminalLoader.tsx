@@ -69,16 +69,7 @@ const applyPageTheme = (theme: "light" | "dark") => {
 
 export default function TerminalLoader() {
   const [sessionKey, setSessionKey] = useState(0);
-  const [phase, setPhase] = useState<"boot" | "command" | "launch" | "exit" | "done">(() => {
-    if (
-      typeof window !== "undefined" &&
-      window.localStorage.getItem(TERMINAL_SKIP_STORAGE_KEY) === "true"
-    ) {
-      return "done";
-    }
-
-    return "boot";
-  });
+  const [phase, setPhase] = useState<"boot" | "command" | "launch" | "exit" | "done">("boot");
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [installLabel, setInstallLabel] = useState("");
@@ -99,6 +90,13 @@ export default function TerminalLoader() {
     const savedTheme =
       window.localStorage.getItem(PAGE_THEME_STORAGE_KEY) === "light" ? "light" : "dark";
     applyPageTheme(savedTheme);
+  }, []);
+
+  useEffect(() => {
+    if (window.localStorage.getItem(TERMINAL_SKIP_STORAGE_KEY) === "true") {
+      bootStartedRef.current = true;
+      setPhase("done");
+    }
   }, []);
 
   useEffect(() => {
