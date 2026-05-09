@@ -49,10 +49,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo2.png", type: "image/png" },
+      { url: "/channel-logo.png", type: "image/png" },
     ],
-    shortcut: "/logo2.png",
-    apple: "/logo2.png",
+    shortcut: "/channel-logo.png",
+    apple: "/channel-logo.png",
   },
   openGraph: {
     title: "W4Whiskers",

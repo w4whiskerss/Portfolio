@@ -13,7 +13,6 @@ type Project = {
     | "portfolio"
     | "playerbatch"
     | "bloodline"
-    | "bloodlinewiki"
     | "w4subgoals";
 };
 
@@ -31,23 +30,15 @@ const projects: readonly Project[] = [
   {
     title: "Personal Portfolio",
     type: "Website",
-    logo: "/logo2.png",
+    logo: "/channel-logo.png",
     logoAlt: "Personal Portfolio logo",
     logoClassName: "object-cover",
     actions: "portfolio",
   },
   {
-    title: "BloodlineWiki",
-    type: "Website",
-    logo: "/BloodLine Logo.png",
-    logoAlt: "BloodlineWiki logo",
-    logoClassName: "object-contain scale-[0.72]",
-    actions: "bloodlinewiki",
-  },
-  {
     title: "W4SubGoals",
     type: "Website",
-    logo: "/logo2.png",
+    logo: "/channel-logo.png",
     logoAlt: "W4SubGoals logo",
     logoClassName: "object-cover",
     actions: "w4subgoals",
@@ -97,16 +88,6 @@ function renderDescription(project: Project) {
           <strong>TV</strong> screens.
         </p>
       </>
-    );
-  }
-
-  if (project.actions === "bloodlinewiki") {
-    return (
-      <p>
-        <strong>BloodlineWiki</strong> is the knowledge hub for the Bloodline
-        project, where I can document systems, guides, and useful references in
-        one place.
-      </p>
     );
   }
 
@@ -316,27 +297,6 @@ export default function ProjectsPage() {
                           className="project-action-button"
                         >
                           View Repository
-                        </a>
-                      </div>
-                    ) : null}
-
-                    {project.actions === "bloodlinewiki" ? (
-                      <div className="flex flex-wrap gap-3">
-                        <a
-                          href="https://bloodlinemodz.vercel.app"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="project-action-button"
-                        >
-                          Visit Website
-                        </a>
-                        <a
-                          href="https://bloodlinesmp.vercel.app"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="project-action-button"
-                        >
-                          Main Bloodline Site
                         </a>
                       </div>
                     ) : null}
