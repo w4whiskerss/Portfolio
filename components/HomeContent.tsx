@@ -30,7 +30,6 @@ type HomeContentProps = {
 };
 
 export default function HomeContent({ channelStats }: HomeContentProps) {
-  const [hireFocus, setHireFocus] = useState(false);
   const [showMoreOpen, setShowMoreOpen] = useState(false);
   const [pageViews, setPageViews] = useState<number | null>(null);
   const [viewsReady, setViewsReady] = useState(false);
@@ -312,42 +311,16 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
           <div className="flex flex-col justify-between gap-10">
             <div className="space-y-6">
               <div className="space-y-4">
-                <div className="animate-pop-up-delay-1 flex flex-wrap items-center justify-between gap-4">
-                  <p
-                    className={`text-sm font-medium tracking-[0.35em] uppercase transition-all duration-300 ${
-                      hireFocus ? "text-emerald-200/80" : "text-white/60"
-                    }`}
-                  >
-                    {hireFocus ? "Hire Focus Mode" : "Welcome to my World!"}
-                  </p>
-
-                  <button
-                    type="button"
-                    onClick={() => setHireFocus((value) => !value)}
-                    aria-pressed={hireFocus}
-                    className={`glass-chip inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.18em] uppercase transition-all duration-300 hover:-translate-y-0.5 ${
-                      hireFocus
-                        ? "border-emerald-400/25 text-emerald-200 shadow-[0_10px_30px_rgba(16,185,129,0.16)]"
-                        : "border-white/10 text-white/60"
-                    }`}
-                  >
-                    <span
-                      className={`h-2.5 w-2.5 rounded-full transition-colors duration-300 ${
-                        hireFocus ? "bg-emerald-400" : "bg-white/35"
-                      }`}
-                    />
-                    {hireFocus ? "Standard View" : "Hire Focus"}
-                  </button>
-                </div>
+                <p className="animate-pop-up-delay-1 text-sm font-medium tracking-[0.35em] text-white/60 uppercase">
+                  Welcome to my World!
+                </p>
 
                 <h1 className="brand-script animate-pop-up-delay-2 max-w-3xl text-5xl text-white sm:text-6xl lg:text-7xl">
                   W4Whiskers
                 </h1>
 
                 <div className="animate-pop-up-delay-3 flex flex-wrap items-center gap-3 text-sm text-white/70">
-                  <div className={hireFocus ? "hire-focus-muted" : ""}>
-                    <LocationBadge />
-                  </div>
+                  <LocationBadge />
 
                   <div className="group relative">
                     <div className="pointer-events-none absolute bottom-[calc(100%+14px)] left-1/2 z-[999] w-max -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:translate-y-[-4px] group-hover:opacity-100">
@@ -359,9 +332,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     </div>
 
                     <span
-                      className={`glass-chip rounded-full border border-white/12 px-4 py-2 transition-all duration-300 hover:border-red-400/40 hover:bg-red-500/12 hover:text-red-200 ${
-                        hireFocus ? "hire-focus-muted" : ""
-                      }`}
+                      className="glass-chip rounded-full border border-white/12 px-4 py-2 transition-all duration-300 hover:border-red-400/40 hover:bg-red-500/12 hover:text-red-200"
                     >
                       Age -18
                     </span>
@@ -373,8 +344,6 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                         viewsReady
                           ? "translate-y-0 opacity-100"
                           : "pointer-events-none translate-y-2 opacity-0"
-                      } ${
-                        hireFocus ? "hire-focus-muted" : ""
                       }`}
                     >
                       {pageViews.toLocaleString()} Views
@@ -382,32 +351,14 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                   ) : null}
                 </div>
 
-                <p
-                  className={`animate-pop-up-delay-3 max-w-2xl text-lg leading-8 italic sm:text-xl transition-all duration-300 ${
-                    hireFocus ? "hire-focus-muted" : "text-orange-100/90"
-                  }`}
-                >
+                <p className="animate-pop-up-delay-3 max-w-2xl text-lg leading-8 text-orange-100/90 italic sm:text-xl transition-all duration-300">
                   If you never try you&apos;ll never know if you can succeed.
                 </p>
 
                 <p className="animate-pop-up-delay-4 max-w-2xl text-base leading-7 text-white/72 sm:text-lg">
-                  I create{" "}
-                  <span className={hireFocus ? "hire-focus-highlight" : ""}>
-                    websites
-                  </span>
-                  ,{" "}
-                  <span className={hireFocus ? "hire-focus-highlight" : ""}>
-                    Minecraft mods
-                  </span>
-                  ,{" "}
-                  <span className={hireFocus ? "hire-focus-highlight" : ""}>
-                    datapacks
-                  </span>
-                  , and{" "}
-                  <span className={hireFocus ? "hire-focus-highlight" : ""}>
-                    UI experiments
-                  </span>{" "}
-                  with a clean, modern style and a creator-first mindset.
+                  I create websites, Minecraft mods, datapacks, and UI
+                  experiments with a clean, modern style and a creator-first
+                  mindset.
                 </p>
               </div>
 
@@ -530,13 +481,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       </div>
                     ) : null}
 
-                    <span
-                      className={`glass-chip rounded-full border border-white/12 px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-1 ${
-                        hireFocus
-                          ? "hire-focus-important text-white"
-                          : "text-white/78"
-                      }`}
-                    >
+                    <span className="glass-chip rounded-full border border-white/12 px-4 py-2 text-sm text-white/78 transition-all duration-300 hover:-translate-y-1">
                       {renderSkillLabel(skill)}
                     </span>
                   </div>
@@ -545,30 +490,12 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
             </div>
 
             <div className="animate-pop-up-delay-5 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/projects"
-                className={`button-connect w-fit px-7 ${
-                  hireFocus ? "hire-focus-cta" : ""
-                }`}
-              >
+              <Link href="/projects" className="button-connect w-fit px-7">
                 <span>View Projects</span>
               </Link>
-              <a
-                href="/contact"
-                className={`button-connect w-fit px-7 ${
-                  hireFocus ? "hire-focus-cta" : ""
-                }`}
-              >
+              <a href="/contact" className="button-connect w-fit px-7">
                 <span>Let&apos;s Connect</span>
               </a>
-              <Link
-                href="/presentation"
-                className={`button-connect w-fit px-7 ${
-                  hireFocus ? "hire-focus-cta" : ""
-                }`}
-              >
-                <span>See what I Can Do!</span>
-              </Link>
             </div>
 
           </div>
@@ -577,21 +504,13 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
               <div className="glass-surface glass-panel-strong glass-overflow-visible animate-pop-up-delay-5 relative flex w-full flex-col justify-between rounded-[1.9rem] border border-white/10 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:p-7">
               <div className="relative z-10 flex items-start justify-between gap-4">
                 <div>
-                  <p
-                    className={`text-sm tracking-[0.28em] uppercase transition-all duration-300 ${
-                      hireFocus ? "hire-focus-muted" : "text-white/50"
-                    }`}
-                  >
+                  <p className="text-sm tracking-[0.28em] text-white/50 uppercase transition-all duration-300">
                     Profile
                   </p>
                   <p className="brand-script mt-2 text-3xl text-white">
                     W4Whiskers
                   </p>
-                  <p
-                    className={`mt-1 text-sm transition-all duration-300 ${
-                      hireFocus ? "hire-focus-important" : "text-orange-100/80"
-                    }`}
-                  >
+                  <p className="mt-1 text-sm text-orange-100/80 transition-all duration-300">
                     YouTuber | Builder | Mod Developer
                   </p>
                 </div>
@@ -608,11 +527,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
               </div>
 
               <div className="glass-surface glass-panel-warm glass-overflow-visible relative z-20 mt-8 rounded-[1.6rem] border border-orange-300/20 p-5">
-                <p
-                  className={`text-xs tracking-[0.3em] uppercase transition-all duration-300 ${
-                    hireFocus ? "hire-focus-muted" : "text-orange-100/70"
-                  }`}
-                >
+                <p className="text-xs tracking-[0.3em] text-orange-100/70 uppercase transition-all duration-300">
                   Live Channel
                 </p>
                 <div className="mt-3 flex items-center gap-3">
@@ -629,21 +544,13 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     <p className="text-lg font-medium text-white">
                       {liveChannelStats.name}
                     </p>
-                    <p
-                      className={`text-sm transition-all duration-300 ${
-                        hireFocus ? "hire-focus-muted" : "text-white/55"
-                      }`}
-                    >
+                    <p className="text-sm text-white/55 transition-all duration-300">
                       Live stats pulled from the W4Whiskerss YouTube channel
                     </p>
                   </div>
                 </div>
                 <div className="mt-5 grid grid-cols-1 gap-3 overflow-visible sm:grid-cols-3">
-                  <div
-                    className={`glass-chip group relative overflow-visible rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300 ${
-                      hireFocus ? "hire-focus-important" : ""
-                    }`}
-                  >
+                  <div className="glass-chip group relative overflow-visible rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300">
                     <p className="text-xs tracking-[0.2em] text-white/45 uppercase">
                       Subs
                     </p>
@@ -664,11 +571,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={`glass-chip rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300 ${
-                      hireFocus ? "hire-focus-muted" : ""
-                    }`}
-                  >
+                  <div className="glass-chip rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300">
                     <p className="text-xs tracking-[0.2em] text-white/45 uppercase">
                       Views
                     </p>
@@ -676,11 +579,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                       {liveChannelStats.viewCount}
                     </p>
                   </div>
-                  <div
-                    className={`glass-chip rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300 ${
-                      hireFocus ? "hire-focus-muted" : ""
-                    }`}
-                  >
+                  <div className="glass-chip rounded-2xl border border-white/8 px-4 py-3 transition-all duration-300">
                     <p className="text-xs tracking-[0.2em] text-white/45 uppercase">
                       Videos
                     </p>
@@ -689,11 +588,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                     </p>
                   </div>
                 </div>
-                <p
-                  className={`mt-4 text-sm leading-6 transition-all duration-300 ${
-                    hireFocus ? "hire-focus-muted" : "text-white/60"
-                  }`}
-                >
+                <p className="mt-4 text-sm leading-6 text-white/60 transition-all duration-300">
                   These are my live YouTube stats. If YouTube breaks something,
                   this card falls back instead of bugging out.
                 </p>
@@ -701,9 +596,7 @@ export default function HomeContent({ channelStats }: HomeContentProps) {
                   href={liveChannelStats.url}
                   target="_blank"
                   rel="noreferrer"
-                  className={`mt-4 inline-flex text-sm font-medium transition-all duration-300 ${
-                    hireFocus ? "hire-focus-important" : "text-orange-200 hover:text-orange-100"
-                  }`}
+                  className="mt-4 inline-flex text-sm font-medium text-orange-200 transition-all duration-300 hover:text-orange-100"
                 >
                   youtube.com/W4Whiskerss
                 </a>

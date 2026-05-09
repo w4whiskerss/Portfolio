@@ -259,22 +259,6 @@ export default function ProjectsPage() {
                     {project.actions === "bloodline" ? (
                       <div className="flex flex-wrap gap-3">
                         <a
-                          href="https://bloodlinesmp.vercel.app"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="project-action-button"
-                        >
-                          Visit Website
-                        </a>
-                        <a
-                          href="https://bloodlinemodz.vercel.app"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="project-action-button"
-                        >
-                          BloodlineWiki
-                        </a>
-                        <a
                           href="https://dsc.gg/blodsmp"
                           target="_blank"
                           rel="noreferrer"
@@ -283,12 +267,20 @@ export default function ProjectsPage() {
                           Join Discord
                         </a>
                         <a
+                          href="https://bloodlinesmp.vercel.app"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-action-button"
+                        >
+                          Visit Website
+                        </a>
+                        <a
                           href="https://modrinth.com/plugin/bloodlinesmp"
                           target="_blank"
                           rel="noreferrer"
                           className="project-action-button"
                         >
-                          Download Plugin/Mod
+                          Download Mod
                         </a>
                         <a
                           href="https://github.com/w4whiskerss/bloodline-smp"

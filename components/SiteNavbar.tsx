@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type SiteNavbarProps = {
-  currentPage: "home" | "projects" | "presentation" | "contact";
+  currentPage: "home" | "projects" | "contact";
 };
 
 export default function SiteNavbar({ currentPage }: SiteNavbarProps) {
@@ -41,9 +41,6 @@ export default function SiteNavbar({ currentPage }: SiteNavbarProps) {
           </Link>
           <Link href="/projects" className={navLinkClass("projects")}>
             Projects
-          </Link>
-          <Link href="/presentation" className={navLinkClass("presentation")}>
-            Presentation
           </Link>
           <Link href="/contact" className={navLinkClass("contact")}>
             Contact
